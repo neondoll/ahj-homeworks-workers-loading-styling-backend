@@ -42,7 +42,8 @@ app.use(async (ctx, next) => {
 
     try {
       return await next();
-    } catch (e) {
+    }
+    catch (e) {
       e.headers = { ...e.headers, ...headers };
 
       throw e;
@@ -73,7 +74,8 @@ const startServer = () => {
     server.listen(port, () => {
       console.log(`Server has been started on http://localhost:${port}`);
     });
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error);
   }
 };
